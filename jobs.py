@@ -14,7 +14,6 @@ def add_job(title, company, link):
     cursor = job.cursor()
     insert_query = """insert into job.jobs (title, company, link, date) values (\'{title}\',\'{company}\', \'{link}\', \'{date}\')
     """.format(title=title, company=company, link=link, date=str(datetime.datetime.today()))
-    print(insert_query)
     try:
         cursor.execute(insert_query)
     except:
